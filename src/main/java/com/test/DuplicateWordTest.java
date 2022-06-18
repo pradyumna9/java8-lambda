@@ -11,7 +11,7 @@ public class DuplicateWordTest {
 	public static void main(String[] args) {
 		
 		Pattern pattern = Pattern.compile("([a-zA-Z0-9])\\1{2}");
-        Matcher matcher = pattern.matcher("is Duplicate word AvailaaAble".toUpperCase());
+        Matcher matcher = pattern.matcher("is Duplicate word Available".toUpperCase());
         System.out.println(matcher.find());
 
 		List<String> wordList = Arrays.asList("SONY","TV","LTD","SONY");
@@ -30,25 +30,12 @@ public class DuplicateWordTest {
 	public static boolean isIdentical(String str)
     {
 		String regex= "([a-z])\\\\1{3}";
-		//String regex = "((\w)\2{2,})";
+        Pattern p = Pattern.compile(regex);
  
-        // Compile the ReGex
-        Pattern p
-            = Pattern.compile(regex);
- 
-        // If the string is empty
-        // return false
         if (str == null) {
             return false;
         }
- 
-        // Find match between given string
-        // and regular expression
-        // using Pattern.matcher()
         Matcher m = p.matcher(str);
- 
-        // Return if the string
-        // matched the ReGex
         return m.matches();
     }
 

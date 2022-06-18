@@ -11,6 +11,12 @@
       <artifactId>mapstruct</artifactId>
       <version>1.4.2.Final</version>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.8.1</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
   <plugins>
