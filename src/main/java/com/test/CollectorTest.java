@@ -3,16 +3,30 @@ package com.test;
 import com.mycomp.model.Person;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URI;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CollectorTest {
-public static void main(String[] args) {
+public static void main(String[] args) throws IOException {
 	
 	List<Person> persons = new ArrayList<>();
-	
+	//Files.readAllLines()
+
+	Path path = Paths.get("src","main","resources","person-data.txt");
+	Charset charset = StandardCharsets.UTF_8;
+	System.out.println(path.toAbsolutePath());
+	//String pathTest = path.toString();
+	List<String> data = Files.readAllLines(path,charset);
+	data.forEach(System.out::println);
 	try(
 			BufferedReader reader =
 		new BufferedReader(new InputStreamReader(Objects.requireNonNull(CollectorTest.class.getResourceAsStream("person-data"))));
