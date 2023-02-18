@@ -1,13 +1,29 @@
 package com.java8code;
 
-import com.sun.tools.internal.xjc.runtime.ZeroOneBooleanAdapter;
-
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.*;
+import java.util.regex.Pattern;
 
 public class DateUtils {
+    private static Pattern DATE_PATTERN_TIMESTAMP = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{3}Z$");
+    private static Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     public static void main(String[] args) {
+
+        String timestampInString = "2023-02-18T20:43:19.161Z";
+        String dateInString ="2023-02-18";
+
+        if(DATE_PATTERN_TIMESTAMP.matcher(timestampInString).matches()){
+            System.out.println("Its Timestamp");
+            Instant instantParse = Instant.parse(timestampInString);
+            System.out.println(instantParse);
+            System.out.println(LocalDateTime.ofInstant(instantParse,ZoneId.of("UTC")));
+        }
+        if(DATE_PATTERN.matcher(dateInString).matches()){
+            System.out.println("Its a date");
+            System.out.println(LocalDate.parse(dateInString));
+        }
+
+
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println("Local Date Time : "+localDateTime );
         LocalDate localDate = localDateTime.toLocalDate();
