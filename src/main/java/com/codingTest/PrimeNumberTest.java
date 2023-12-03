@@ -6,9 +6,9 @@ import java.util.stream.Stream;
 public class PrimeNumberTest {
 
     public static void main(String[] args) {
-       long count  = Stream.iterate(0,n->n+1).limit(10).filter(PrimeNumberTest::isPrime)
-               .peek(System.out::println).count();
-        System.out.println("Prim Number Count:"+count);
+        long count = Stream.iterate(0, n -> n + 1).limit(10).filter(PrimeNumberTest::isPrime)
+                .peek(System.out::println).count();
+        System.out.println("Prim Number Count:" + count);
     }
 
     private static boolean isPrime(int n) {
