@@ -24,10 +24,9 @@ public class DateUtils {
         }
 
 
-        LocalDateTime localDateTime = LocalDateTime.now();
-        System.out.println("Local Date Time : "+localDateTime );
-        LocalDate localDate = localDateTime.toLocalDate();
-        System.out.println("Local Date : "+localDate);
+       // LocalDateTime localDateTime = getLocalDateTime();
+       // LocalDate localDate = localDateTime.toLocalDate();
+        //System.out.println("Local Date : "+localDate);
         Instant instant = Instant.now();
         System.out.println("Instant Value : "+ instant);
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
@@ -53,5 +52,11 @@ public class DateUtils {
         System.out.println("LocalDate from Long Value: "+zonedDateTimeFromLongValue.toLocalDate());
 
 
+    }
+
+    public   LocalDateTime getLocalDateTimeCustom() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println("Local Date Time : "+localDateTime );
+        return localDateTime;
     }
 }
