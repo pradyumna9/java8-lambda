@@ -29,7 +29,8 @@ public class OptionalTest {
 
 
         //pick the value if hand is there
-        Optional<String> id = Optional.ofNullable(person)
+        Optional<String> id =
+                Optional.ofNullable(person)
                 .map(Person::getParties)
                 .flatMap(parties -> parties.stream().filter(party1 -> "CONGRESS".equals(party1.getPartyName())).map(Party::getIdentificationList).filter(Objects::nonNull).findFirst())
                 .flatMap(identifications -> CollectionUtils.emptyIfNull(identifications).stream()

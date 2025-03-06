@@ -9,7 +9,7 @@ public class MapVsFlatMap {
     public static void main(String[] args) {
         List<String> stringList = Arrays.asList("STACK","OOVER");
         List<String[]> stringsArrayList = stringList.stream().map(s -> s.split("")).distinct().collect(Collectors.toList());
-        stringsArrayList.stream().forEach(System.out::println);
+        stringsArrayList.forEach(System.out::println);
 
         List<List<String>> namesNested = Arrays.asList(
                 Arrays.asList("Jeff", "Bezos"),
