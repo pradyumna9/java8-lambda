@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @SuperBuilder
@@ -56,4 +57,5 @@ public class Person {
 	public void setParties(List<Party> parties) {
 		this.parties = parties;
 	}
+
 }
